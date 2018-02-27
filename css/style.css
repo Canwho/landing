@@ -7732,7 +7732,7 @@ html.lt-ie-10 .range-condensed > [class*='cell'],
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
 	opacity: 1;
-	transform: translateZ(0)
+	transform: translateZ(0);
 }
 
 .animated.infinite {
