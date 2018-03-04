@@ -153,7 +153,7 @@
                     <p data-caption-animate="fadeInUp" data-caption-delay="600"></p>
                     <ul class="group text-xs-nowrap">
                       <li>
-                        <a class="button button-primary" href="index-home.html" data-caption-animate="fadeInUp" data-caption-delay="500" onClick="ga('send', 'event', { eventCategory: 'join_us', eventAction: 'button_click', eventLabel: 'join_us_top'});">立刻加入</a>
+                        <a class="button button-primary" href="index-home.html" data-caption-animate="fadeInUp" data-caption-delay="500" onClick="trackOutboundLink('http://www.example.com'); return false;">立刻加入</a>
                       </li>
                     </ul>
                   </div>
@@ -508,6 +508,21 @@
   <!-- Javascript-->
   <script src="js/core.min.js"></script>
   <script src="js/script.js"></script>
+
+
+  <script>
+    /**
+     * Google Analystic
+    */
+    var trackOutboundLink = function (url) {
+      ga('send', 'event', 'outbound', 'click', url, {
+        'transport': 'beacon',
+        'hitCallback': function () { document.location = url; }
+      });
+    }
+  </script>
+
+
 </body>
 
 </html>
